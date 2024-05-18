@@ -37,6 +37,7 @@ export class CurrencyService {
     this.currencyService.getExchangeRates().subscribe(response => {
         for (const rate of this.rates) {
           const prevRate = rate.rate;
+          // костыль с делением единицы на значение курса нужен, чтобы уменьшить количество запросов к api, которых и так мало
           rate.rate = 1 / response[rate.code];
           rate.diff = rate.rate - prevRate;
         }

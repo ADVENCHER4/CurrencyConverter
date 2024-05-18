@@ -1,0 +1,42 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Configure environment variables
+        run: |
+          echo "export const environment = {" > src/environments/environment.prod.ts
+          echo "  production: true," >> src/environments/environment.prod.ts
+          echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.prod.ts
+          echo "  apiKey: '${{ secrets.API_KEY }}'" >> src/environments/environment.prod.ts
+          echo "  apiEndpoint: '${{ secrets.API_ENDPOINT }}'" >> src/environments/environment.prod.ts
+          echo "};" >> src/environments/environment.prod.ts
+
+      - name: Build Angular app
+        run: npm run build -- --prod --base-href "/your-repo/"
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Deploy to GitHub Pages"
+          git push origin HEAD:gh-pages
