@@ -31,7 +31,7 @@ jobs:
           echo "};" >> src/environments/environment.prod.ts
 
       - name: Build Angular app
-        run: npm run build
+        run: ng build --configuration production
 
       - name: Deploy to GitHub Pages
         run: |
