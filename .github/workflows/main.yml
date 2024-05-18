@@ -28,10 +28,10 @@ jobs:
           echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.prod.ts
           echo "  apiKey: '${{ secrets.API_KEY }}'" >> src/environments/environment.prod.ts
           echo "  apiEndpoint: '${{ secrets.API_ENDPOINT }}'" >> src/environments/environment.prod.ts
-          echo "};" >> src/environments/environment.prod.ts
+          echo "};" >> src/environments/environment.ts
 
       - name: Build Angular app
-        run: ng build --configuration production
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
