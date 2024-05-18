@@ -37,7 +37,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git branch -u origin/master
+          git fetch origin
+          git worktree add gh-pages
+          cp -R dist/currency/* gh-pages/
+          cd gh-pages
           git add .
           git commit -m "Deploy to GitHub Pages"
           git push origin HEAD:gh-pages
