@@ -1,0 +1,5 @@
+<div class="currencies-list">
+  @for (rate of currencyService.rates; track rate) {
+    <app-currency-block [rate]="rate"/>
+  }
+</div>

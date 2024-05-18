@@ -1,0 +1,14 @@
+<div class="currency">
+  <h3 class="currency__name">{{ rate?.code! }}</h3>
+  <div class="currency__value">
+    <p class="currency__now-value">{{ rate?.rate | number : '1.2-2' }}</p>
+    <div class="currency__diff">
+      @if (rate!.diff > 0) {
+        <div class="up-arrow"></div>
+      } @else if (rate!.diff < 0) {
+        <div class="down-arrow"></div>
+      }
+      <p class="currency__diff-value">({{ rate!.diff | diff }})</p>
+    </div>
+  </div>
+</div>

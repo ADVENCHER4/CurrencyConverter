@@ -1,0 +1,24 @@
+.header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__button {
+    background-color: darkgray;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &__datetime {
+    font-size: 20px;
+  }
+}

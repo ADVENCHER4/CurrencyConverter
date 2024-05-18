@@ -1,0 +1,8 @@
+<header class="header">
+  <div class="header__control">
+    <h2 class="header__title">Currency RUB</h2>
+    <button class="header__button" (click)="openModal()">+</button>
+  </div>
+  <p class="header__datetime">{{ currencyService.updateTime | date: 'd.MM.yy, H:mm:ss' }}</p>
+</header>
+

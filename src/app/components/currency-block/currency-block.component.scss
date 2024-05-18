@@ -1,0 +1,36 @@
+.currency {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__value {
+    min-width: 150px;
+    border: 3px solid black;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__diff {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.up-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 15px 10px;
+  border-color: transparent transparent #79FF75 transparent;
+}
+
+.down-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 10px 0 10px;
+  border-color: #FF7272 transparent transparent transparent;
+}

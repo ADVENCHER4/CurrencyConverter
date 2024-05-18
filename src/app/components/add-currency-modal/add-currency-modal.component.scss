@@ -1,0 +1,29 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__content {
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+}
