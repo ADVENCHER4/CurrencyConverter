@@ -1,7 +1,0 @@
-<div class="new-currencies-list">
-  @for (newCode of currencyService.newCodes; track newCode) {
-    <app-new-currency-block [code]="newCode"/>
-  } @empty {
-    <h3>No currencies to add</h3>
-  }
-</div>
