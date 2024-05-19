@@ -1,6 +1,6 @@
 # Currency
 
-Тестовое задание по вакансии Frontend-инженер (Angular)
+Тестовое задание по вакансии Frontend-инженер (Angular) ([сслыка](https://advencher4.github.io/CurrencyConverter/))
 
 ## Задание
 
