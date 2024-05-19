@@ -15,6 +15,7 @@ export class FetchCurrencyService {
   }
 
   public getExchangeRates(): Observable<Dictionary<number>> {
+    console.log(this.url);
     return this.http.get<Response>(this.url).pipe(
       map((response) => response.conversion_rates),
     );
