@@ -23,12 +23,12 @@ jobs:
 
       - name: Configure environment variables
         run: |
-          echo "export const environment = {" > src/environments/environment.ts
-          echo "  production: true," >> src/environments/environment.ts
-          echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.ts
-          echo "  apiKey: '${{ secrets.API_KEY }}'" >> src/environments/environment.ts
-          echo "  apiEndpoint: '${{ secrets.API_ENDPOINT }}'" >> src/environments/environment.ts
-          echo "};" >> src/environments/environment.ts
+          echo "export const environment = {" > src/environments/environment.prod.ts
+          echo "  production: true," >> src/environments/environment.prod.ts
+          echo "  apiUrl: '${{ secrets.API_URL }}'," >> src/environments/environment.prod.ts
+          echo "  apiKey: '${{ secrets.API_KEY }}'" >> src/environments/environment.prod.ts
+          echo "  apiEndpoint: '${{ secrets.API_ENDPOINT }}'" >> src/environments/environment.prod.ts
+          echo "};" >> src/environments/environment.prod.ts
 
       - name: Build Angular app
         run: npm run build
